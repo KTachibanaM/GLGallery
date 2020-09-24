@@ -40,12 +40,12 @@ public class MainActivity extends GLActivity implements GalleryView.Listener {
 
         mGalleryProvider = new DirGalleryProvider(getResources(),
                 UniFile.fromFile(new File(Environment.getExternalStorageDirectory(), "GLGallery")));
-        mAdapter = new ProviderAdapter(glRoot, mGalleryProvider, 0, 3);
+        mAdapter = new ProviderAdapter(glRoot, mGalleryProvider, 0, 0);
         mAdapter.setShowIndex(true);
         mAdapter.setClipMode(ProviderAdapter.CLIP_RIGHT_LEFT);
 
         final GalleryView.Builder builder = new GalleryView.Builder(this, glRoot);
-        builder.layoutMode = GalleryView.LAYOUT_SCROLL_TOP_TO_BOTTOM;
+        builder.layoutMode = GalleryView.LAYOUT_PAGER_RIGHT_TO_LEFT;
 
         builder.backgroundColor = 0xff212121;
         builder.edgeColor = 0x333f51b5;
